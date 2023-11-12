@@ -1,1 +1,45 @@
-Api Testi ve Swagger
+TRÝGGERLAR SQL de   -->  bu trigerler Abouts tablosunda güncelleme yapar guests staffs ve rooms tablolarýna veri eklendiðinde veya silindiðinde
+----------------------------------------------------------------------------------
+Room Tablosu için
+------------------------------------------------------
+create trigger Roomincrease
+on Rooms
+After Insert
+as
+Update Abouts set RoomCount=RoomCount+1
+
+create trigger RoomDeccrease
+on Rooms
+After Delete
+as
+Update Abouts set RoomCount=RoomCount-1
+-------------------------------------------------------
+Staff için
+-------------------------------------------------------
+create trigger Stafficrease
+on Staffs
+After Insert
+as
+Update Abouts set StaffCount=StaffCount+1
+
+create trigger StaffDecrease
+on Staffs
+After Delete
+as
+Update Abouts set StaffCount=StaffCount-1
+----------------------------------------------------------
+Guest için
+----------------------------------------------------------
+create trigger GuestDecrease
+on Guests
+After Delete
+as
+Update Abouts set CustomerCount=CustomerCount-1
+
+create trigger Guestincrease
+on Guests
+After Insert
+as
+Update Abouts set CustomerCount=CustomerCount+1
+------------------------------------------------------------
+------------------------------------------------------------
