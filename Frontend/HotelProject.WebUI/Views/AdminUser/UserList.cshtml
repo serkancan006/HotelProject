@@ -1,0 +1,42 @@
+﻿@model List<HotelProject.WebUI.Dtos.AppUserDto.ResultAppUserListDto>
+
+@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+
+<div class="table-responsive">
+    <table class="table table-xs mb-0">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ad Soyad</th>
+                <th>Şehir Bilgisi</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <th>@count</th>
+                    <td>@item.Name @item.Surname</td>
+                    <td>@item.City</td>
+                    @if (item.Status)
+                    {
+                        <td><i class="fa fa-circle-o text-success  mr-2"></i>Aktif</td>
+                    }
+                    else
+                    {
+                        <td><i class="fa fa-circle-o text-danger  mr-2"></i>Pasif</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <a href="/Register/Index/" class="btn btn-primary">Yeni Kullanıcı Kaydı</a>
+</div>
