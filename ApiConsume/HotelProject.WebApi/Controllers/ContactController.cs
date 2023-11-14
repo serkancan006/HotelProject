@@ -17,12 +17,6 @@ namespace HotelProject.WebApi.Controllers
             _contactService = contactService;
         }
 
-        [HttpGet]
-        public IActionResult ContactList()
-        {
-            var values = _contactService.TGetList();
-            return Ok(values);
-        }
         [HttpPost]
         public IActionResult AddContact(Contact Contact)
         {
@@ -30,36 +24,22 @@ namespace HotelProject.WebApi.Controllers
             _contactService.TInsert(Contact);
             return Ok();
         }
-        [HttpDelete("{id}")]
-        public IActionResult DeleteContact(int id)
+        [HttpGet]
+        public IActionResult InboxListContact()
         {
-            var values = _contactService.TGetByID(id);
-            _contactService.TDelete(values);
-            return Ok();
-        }
-        [HttpPut]
-        public IActionResult UpdateContact(Contact Contact)
-        {
-            _contactService.TUpdate(Contact);
-            return Ok();
+            var values = _contactService.TGetList();
+            return Ok(values);
         }
         [HttpGet("{id}")]
-        public IActionResult GetContact(int id)
+        public IActionResult GetSendMessage(int id)
         {
             var values = _contactService.TGetByID(id);
             return Ok(values);
         }
-        //[HttpGet]
-        //public IActionResult InboxListContact()
-        //{
-        //    var values = _contactService.TGetList();
-        //    return Ok(values);
-        //}
-        //[HttpGet("{id}")]
-        //public IActionResult GetSendMessage(int id)
-        //{
-        //    var values = _contactService.TGetByID(id);
-        //    return Ok(values);
-        //}
+        [HttpGet("[action]")]
+        public IActionResult GetContactCount()
+        {
+            return Ok(_contactService.TGetContactCount());
+        }
     }
 }
