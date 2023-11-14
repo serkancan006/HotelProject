@@ -1,0 +1,20 @@
+﻿@model List<HotelProject.WebUI.Dtos.AppUserDto.ResultAppUserWithWorkLocationDto>
+@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h1>UserList</h1>
+<ul>
+    @foreach (var item in Model)
+    {
+        count++;
+
+        <li><p>@count</p></li>
+        <li><p>@item.Name</p></li>
+        <li><p>@item.Surname</p></li>
+        <li><p>@item.WorkLocationID</p></li>
+        <li><p>@item.WorkLocationName</p></li>
+    }
+</ul>

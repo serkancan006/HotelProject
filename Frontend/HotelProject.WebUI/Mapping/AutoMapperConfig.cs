@@ -40,7 +40,7 @@ namespace HotelProject.WebUI.Mapping
             CreateMap<CreateGuestDto, Guest>().ReverseMap();
             CreateMap<UpdateGuestDto, Guest>().ReverseMap();
 
-            CreateMap<ResultAppUserDto, AppUser>().ReverseMap();
+            CreateMap<ResultAppUserWithWorkLocationDto, AppUser>().ReverseMap();
 
         }
     }
