@@ -11,7 +11,6 @@ namespace HotelProject.WebUI.Controllers
     public class GuestController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
         public GuestController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
