@@ -1,0 +1,54 @@
+﻿@model UpdateBookingDto
+@{
+    ViewData["Title"] = "UpdateBooking";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<h1>Rezervasyon GÜncelleme Sayfası</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="BookingID" />
+
+    <label>Misafir Ad Soyad</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+
+    <label>Misafir Mail</label>
+    <input type="email" asp-for="Mail" class="form-control" />
+    <br />
+
+    <label>Misafir Giriş Tarihi</label>
+    <input type="date" asp-for="Checkin" class="form-control" />
+    <br />
+
+    <label>Misafir Çıkış Tarihi</label>
+    <input type="date" asp-for="CheckOut" class="form-control" />
+    <br />
+
+    <label>Yerişkin Sayısı</label>
+    <input type="text" asp-for="AdultCount" class="form-control" />
+    <br />
+
+    <label>Çocuk Sayısı</label>
+    <input type="text" asp-for="ChildCount" class="form-control" />
+    <br />
+
+    <label>Oda Sayısı</label>
+    <input type="text" asp-for="RoomCount" class="form-control" />
+    <br />
+
+    <label>Durum</label>
+    <input type="text" asp-for="Status" class="form-control" />
+    <br />
+
+    <label>Özel istekler</label>
+    <textarea type="text" asp-for="SpecialRequest" rows="5" class="form-control"></textarea>
+    <br />
+
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+
+    <button class="btn mb-1 btn-rounded btn-outline-primary">Rezervasyon Güncelle</button>
+</form>
+
